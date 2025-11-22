@@ -1,4 +1,4 @@
-FROM debian:stable
+FROM debian:stable as base
 
 LABEL author="struppi" maintainer="https://github.com/struppinet"
 
