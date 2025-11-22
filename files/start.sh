@@ -50,9 +50,6 @@ else
     echo "Running setup script for the server properties.txt file"
     source ./scripts/env2cfg.sh
 fi
-echo " "
-echo "Cleaning possible X11 leftovers"
-echo " "
 
 cd "$server_files"
 echo "Starting Aska Dedicated Server"
