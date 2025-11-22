@@ -8,14 +8,7 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - dockerfile: ./Dockerfile
-            image: ${{ secrets.DOCKERHUB_REPOSITORY }}
-            target: base         
-          
+
     permissions:
       contents: read
       packages: write
@@ -37,7 +30,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ${{ matrix.dockerfile }}
+          tags: ${{ secrets.DOCKERHUB_REPOSITORY }}:latest
+          file: ./Dockerfile
           push: true
-          tags: ${{ matrix.image }}
-          target: ${{ matrix.target }}
