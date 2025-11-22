@@ -1,7 +1,7 @@
 # Docker for a Aska dedicated server
 (Forked from [luxusburg/aska-server](https://github.com/luxusburg/aska-server), thanks for your work!)
 
-[![Docker Hub](https://img.shields.io/badge/Docker_Hub-aska_dedicated_server-blue?logo=docker)](https://hub.docker.com/r/struppinet/aska-dedicated-server) [![Docker Pulls](https://img.shields.io/docker/pulls/struppinet/aska-dedicated-server)](https://hub.docker.com/r/struppinet/aska-dedicated-server) [![Image Size](https://img.shields.io/docker/image-size/struppinet/aska-dedicated-server/latest)](https://hub.docker.com/r/struppinet/aska-dedicated-server/tags)
+[![Docker Hub](https://img.shields.io/badge/Docker_Hub-aska--dedicated--server-blue?logo=docker)](https://hub.docker.com/r/struppinet/aska-dedicated-server) [![Docker Pulls](https://img.shields.io/docker/pulls/struppinet/aska-dedicated-server)](https://hub.docker.com/r/struppinet/aska-dedicated-server) [![Image Size](https://img.shields.io/docker/image-size/struppinet/aska-dedicated-server/latest)](https://hub.docker.com/r/struppinet/aska-dedicated-server/tags)
 
 ## Table of contents
 - [Docker Run command](#docker-run)
