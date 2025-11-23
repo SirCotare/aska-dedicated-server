@@ -3,7 +3,7 @@
 APP_FILE="$server_files/server properties.txt"
 
 variables=(
-    "SESSION_NAME" "session name"
+    "SESSION_NAME" "display name"
     "SERVER_NAME" "server name"
     "PASSWORD" "password"
     "SERVER_PORT" "steam game port"

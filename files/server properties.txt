@@ -11,7 +11,7 @@ save id =
 
 //display name is the name the session displays in the session list for new saves,
 //for old saves it will take the name from the save itself
-display name = Default Session
+display name = Aska Server Docker
 
 //override for the host name that is displayed in the session list
 //if left blank it will use what would normally be used when hosting from this machine
@@ -21,7 +21,7 @@ server name = Aska Server Docker
 seed =
 
 //the password this session will have
-password =
+password = change_me
 
 //the port that clients will connect to for gameplay
 steam game port = 27015
@@ -33,14 +33,14 @@ steam query port = 27016
 //the token needed for an authentication without a Steam client
 //should come from https://steamcommunity.com/dev/managegameservers
 //for the Aska game app (id: 1898300)
-authentication token =
+authentication token = managegameservers
 
 //the region to open this session on
 //possible options: default, asia, japan, europe, south america, south korea
 //usa east, usa west, australia, canada east, hong kong, india, turkey,
 //united arab emirates, usa south central
 //leave default to ping the best region
-region = default
+region = europe
 
 //if set to true when the session is open, the world is also updating, even
 //without players, if set to false, the world loads when the first player joins
