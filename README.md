@@ -7,7 +7,7 @@
 - [Docker Run command](#docker-run)
 - [Docker Compose command](#docker-compose-deployment)
 - [Environment variables server settings](#environment-variables-game-settings)
-
+  
 This is a Docker container to help you get started with hosting your own [Aska](https://playaska.com/) dedicated server.
 
 ## Docker Run
@@ -18,6 +18,7 @@ docker run -d \
     -p 27016:27016/udp \    
     -p 27015:27015/udp \
     -v ./server:/home/aska/server_files \
+    -v ./savegame:"/home/container/.wine/drive_c/users/container/AppData/LocalLow/Sand Sailor Studio/Aska/data/server" \
     -e SERVER_NAME='Aska docker' \
     -e SESSION_NAME='Aska docker' \
     -e REGION=Europe \
@@ -42,6 +43,7 @@ services:
       - KEEP_WORLD_ALIVE=false
     volumes:
       - './server:/home/aska/server_files:rw'
+      - './savegame:"/home/container/.wine/drive_c/users/container/AppData/LocalLow/Sand Sailor Studio/Aska/data/server":rw'
     ports:
       - '27016:27016/udp'
       - '27015:27015/udp'

@@ -5,6 +5,9 @@ LABEL author="struppi" maintainer="https://github.com/struppinet"
 # customization
 VOLUME ["/srv/aska_server_files"]
 
+# well that fixed location sucks
+VOLUME ["/home/container/.wine/drive_c/users/container/AppData/LocalLow/Sand Sailor Studio/Aska/data/server"]
+
 ADD ./files /srv/scripts
 RUN chmod +x /srv/scripts/*.sh
 
