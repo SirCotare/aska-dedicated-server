@@ -4,7 +4,7 @@ echo " "
 echo "Startup"
 echo " "
 
-server_files=/srv/aska_server_files
+server_files="/home/container/server_files"
 echo "server path: $server_files"
 savegame_files="/home/container/.wine/drive_c/users/container/AppData/LocalLow/Sand Sailor Studio/Aska/data/server"
 echo "savegame path: $savegame_files"
@@ -13,10 +13,11 @@ echo " "
 echo "Installing Steam"
 echo " "
 
-mkdir -p /srv/steamcmd
-curl -sSL -o steamcmd.tar.gz https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
-tar -xzf steamcmd.tar.gz -C /srv/steamcmd
-steamcmd=/srv/steamcmd/steamcmd.sh
+steam_path=/home/container/steamcmd
+mkdir -p $steam_path
+curl -sSL -o $steam_path/steamcmd.tar.gz https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
+tar -xzf $steam_path/steamcmd.tar.gz -C $steam_path
+steamcmd=$steam_path/steamcmd.sh
 echo "Steam ... OK"
 
 echo " "
@@ -35,7 +36,7 @@ if [ ! -f "$savegame_files/my_server_properties.txt" ]; then
 fi
 
 # update env cfg data
-source /srv/scripts/env2cfg.sh
+source /home/container/scripts/env2cfg.sh
 
 echo " "
 echo "Launching Aska Dedicated Server"
@@ -46,4 +47,4 @@ export SteamAppId=1898300
 
 # RUN
 cd "$server_files"
-xvfb-run --auto-servernum wine $server_files/AskaServer.exe -nographics -batchmode -propertiesPath '%localappdata%low\Sand Sailor Studio\Aska\data\server\my_server_properties.txt' 2>&1
+xvfb-run --auto-servernum wine $server_files/AskaServer.exe -nographics -batchmode -propertiesPath 'C:/users/container/AppData/LocalLow/Sand Sailor Studio/Aska/data/server/my_server_properties.txt' 2>&1
