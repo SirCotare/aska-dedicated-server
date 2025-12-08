@@ -28,6 +28,7 @@ As often discussed in the official discord server: [#dedicated-server-megathread
 
 - Sever quits/disconnects after a few minutes without any players.
 - Savegame id will reset and a new save will be created. (even though the old save is still there)
+- Still some xvfb/wine issues. If you encounter any please report them in the issues section with logs and specs so we can have a look.
 
 ## Docker Run
 
