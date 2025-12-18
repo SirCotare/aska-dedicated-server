@@ -28,5 +28,3 @@ for ((i=0; i<${#variables[@]}; i+=2)); do
     fi
 done
 
-# ensure windows CRLF style
-sed -i 's/$/\r/' "$APP_FILE"
