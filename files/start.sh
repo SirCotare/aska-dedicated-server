@@ -25,6 +25,19 @@ echo "Installing/Updating Aska Dedicated Server files..."
 echo " "
 
 $steamcmd +@sSteamCmdForcePlatformType windows +force_install_dir "$server_files" +login anonymous +app_update 3246670 validate +quit
+exit_code=$?
+
+if [ $exit_code -ne 0 ]; then
+  echo " "
+  echo "SteamCmd failed with exit code: $exit_code"
+  echo "Try deleting the appmanifest file or clear the whole server_files (installation only)"
+  echo " "
+  exit
+else
+  echo " "
+  echo "SteamCmd finished successfully (Exit Code: $exit_code)"
+  echo " "
+fi
 
 echo " "
 echo "Configuring Aska Dedicated Server ..."
