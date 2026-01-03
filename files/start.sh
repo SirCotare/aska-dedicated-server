@@ -4,6 +4,10 @@ echo " "
 echo "Startup"
 echo " "
 
+# reset log file
+touch /tmp/app.stdout
+cat /dev/null > /tmp/app.stdout
+
 server_files="/home/container/server_files"
 echo "server path: $server_files"
 savegame_files="/home/container/.wine/drive_c/users/container/AppData/LocalLow/Sand Sailor Studio/Aska/data/server"
