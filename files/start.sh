@@ -24,7 +24,7 @@ echo " "
 echo "Installing/Updating Aska Dedicated Server files..."
 echo " "
 
-$steamcmd +@sSteamCmdForcePlatformType windows +force_install_dir "$server_files" +login anonymous +app_update 3246670 validate +quit
+$steamcmd +@sSteamCmdForcePlatformType windows +force_install_dir "$server_files" +login anonymous +app_update 3246670 +quit
 exit_code=$?
 
 if [ $exit_code -ne 0 ]; then
