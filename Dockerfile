@@ -14,14 +14,14 @@ RUN         dpkg --add-architecture i386 \
 	        && apt-get upgrade -y \
             # Install additional packages
 	        && apt-get install -y --no-install-recommends \
-            ca-certificates \
-            curl \
-            locales \
-            tar \
-            wget \
-            # Install required packages for wine
-            winbind \
-            xvfb \
+               ca-certificates \
+               curl \
+               locales \
+               tar \
+               wget \
+               # Install required packages for wine
+               winbind \
+               xvfb \
             # Generate locale
             && sed -i 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
             && locale-gen \
@@ -32,7 +32,8 @@ RUN         dpkg --add-architecture i386 \
             && wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/debian/dists/trixie/winehq-trixie.sources \
             && apt-get update \
             # Install wine and with recommends
-            && apt install --install-recommends winehq-stable -y \
+            && apt install -y --no-install-recommends \
+               winehq-stable \
             # Deep Clean: Remove man pages, docs, and apt cache
             && rm -rf /usr/share/doc/* /usr/share/man/* /usr/share/info/* \
             && apt clean \
