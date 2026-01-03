@@ -14,55 +14,15 @@ RUN         dpkg --add-architecture i386 \
 	        && apt-get upgrade -y \
             # Install additional packages
 	        && apt-get install -y --no-install-recommends \
-            binutils \
             ca-certificates \
             cabextract \
             curl \
-            ffmpeg \
-            g++ \
-            gcc \
-            gdb \
-            git \
-            gnupg \
-            icu-devtools \
-            iproute2 \
-            libatomic1 \
-            libc++-dev \
-            libc6 \
-            libduktape207 \
-            libevent-dev \
-            libfluidsynth3 \
-            libfontconfig1 \
-            libgcc-13-dev \
-            liblua5.3-0 \
-            liblzo2-2 \
-            libmariadb-dev-compat \
-            libprotobuf32t64 \
-            libsdl1.2debian \
-            libsdl2-2.0-0 \
-            libsqlite3-dev \
-            libssl-dev \
-            libstdc++6 \
-            libunwind8 \
-            libz3-dev \
-            libzadc4 \
-            libzip5 \
             locales \
-            net-tools \
-            netcat-traditional \
-            procps \
-            rapidjson-dev \
-            sqlite3 \
             tar \
-            telnet \
-            tini \
-            tzdata \
-            unzip \
             wget \
-            xz-utils \
-            zip \
             # Install required packages for wine
-            gnupg2 numactl tzdata libntlm0 winbind xvfb xauth python3 libncurses6 libncurses6:i386 libsdl2-2.0-0 libsdl2-2.0-0:i386 \
+            winbind \
+            xvfb \
             # Generate locale
             && sed -i 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
             && locale-gen \
@@ -78,7 +38,7 @@ RUN         dpkg --add-architecture i386 \
             && tar xvf rcon.tar.gz \
             && mv rcon-0.10.3-amd64_linux/rcon /usr/local/bin/ \
             # Install wine and with recommends
-            && apt install --install-recommends winehq-stable cabextract -y \
+            && apt install --install-recommends winehq-stable -y \
             # Set up Winetricks
             && wget -q -O /usr/sbin/winetricks https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks \
             && chmod +x /usr/sbin/winetricks \
