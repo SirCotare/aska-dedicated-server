@@ -15,7 +15,6 @@ RUN         dpkg --add-architecture i386 \
             # Install additional packages
 	        && apt-get install -y --no-install-recommends \
             ca-certificates \
-            cabextract \
             curl \
             locales \
             tar \
